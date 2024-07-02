@@ -1,0 +1,109 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('background.jpg'); /* Replace 'background.jpg' with your image path */
+    background-size: cover;
+    background-position: center;
+    color: white; /* Ensuring text is visible on the background image */
+}
+
+.game-container {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7); /* Dark semi-transparent background for readability */
+    padding: 20px;
+    border-radius: 6px; /* Softer rounded corners */
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.2); /* Enhanced shadow for better depth */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative; /* Added for positioning the overlay */
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Updated to use fractional units for equal distribution */
+    gap: 10px; /* Increased gap for better spacing */
+    margin: 20px 0; /* Increased margin to separate the board from other elements */
+    padding: 20px; /* Increased padding for the board */
+    border-radius: 12px; /* Softer rounded corners for the board */
+    /* Removed background color */
+    justify-content: center; /* Center the board */
+}
+
+.cell {
+    width: 90px;
+    height: 70px; /* Made cells square */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    cursor: pointer;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1)); /* Subtle gradient background */
+    border: 1px solid rgba(255, 255, 255, 0.5); /* Border for better visibility */
+    border-radius: 8px; /* Softer rounded corners for cells */
+    transition: background 0.3s, transform 0.3s; /* Smooth transition for background and transform */
+}
+
+.cell:hover {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.3)); /* Slightly brighter on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+button {
+    padding: 15px 30px; /* Increased padding for larger button size */
+    margin: 10px;
+    font-size: 1.2em; /* Increased font size */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #655858; /* More vibrant background color */
+    color: white; /* Ensuring text is visible */
+    transition: background-color 0.3s, transform 0.3s, border 0.3s; /* Smooth transition for background color, transform, and border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Added shadow for better visibility */
+}
+
+button:hover {
+    background-color: #cf6d6d; /* Darker shade on hover */
+    transform: scale(1.1) rotate(5deg); /* More pronounced scaling and slight rotation on hover */
+    border: 2px solid #fff; /* Adding a border on hover for emphasis */
+}
+
+#message {
+    margin-top: 20px;
+    font-size: 1.9em;
+}
+
+#laps {
+    list-style: none;
+    padding: 0;
+    max-height: 150px; /* Adjusted max-height for better visibility */
+    overflow-y: auto;
+}
+
+#laps div {
+    background-color: #e0e0e0;
+    padding: 5px 10px;
+    margin: 5px 0;
+    border-radius: 4px;
+}
+
+/* Winner overlay styles */
+.winner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 3em;
+    visibility: hidden;
+}
